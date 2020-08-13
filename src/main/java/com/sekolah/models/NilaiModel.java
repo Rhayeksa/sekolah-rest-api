@@ -21,13 +21,18 @@ public class NilaiModel extends DateAudit<Long> {
     @JoinColumn(name = "id_guru", nullable = false)
     private GuruModel guruModel;
 
+    @ManyToOne
+    @JoinColumn(name = "id_siswa", nullable = false)
+    private SiswaModel siswaModel;
+
     public NilaiModel() {
     }
 
-    public NilaiModel(Double nilai, MataPelajaranModel mataPelajaranModel, GuruModel guruModel) {
+    public NilaiModel(Double nilai, MataPelajaranModel mataPelajaranModel, GuruModel guruModel, SiswaModel siswaModel) {
         this.nilai = nilai;
         this.mataPelajaranModel = mataPelajaranModel;
         this.guruModel = guruModel;
+        this.siswaModel = siswaModel;
     }
 
     public Double getNilai() {
@@ -52,6 +57,14 @@ public class NilaiModel extends DateAudit<Long> {
 
     public void setGuruModel(GuruModel guruModel) {
         this.guruModel = guruModel;
+    }
+
+    public SiswaModel getSiswaModel() {
+        return this.siswaModel;
+    }
+
+    public void setSiswaModel(SiswaModel siswaModel) {
+        this.siswaModel = siswaModel;
     }
 
 }
