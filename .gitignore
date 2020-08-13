@@ -34,5 +34,4 @@ out/
 .vscode/
 
 ### doc ###
-documentations/*.*.bak
-bin
+documentations
