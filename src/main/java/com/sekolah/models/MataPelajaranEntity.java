@@ -6,7 +6,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "mata_pelajaran")
-public class MataPelajaranModel extends DateAudit<Long> {
+public class MataPelajaranEntity extends DateAudit<Long> {
 
     @Column(name = "kode")
     private String kode;
@@ -23,10 +23,10 @@ public class MataPelajaranModel extends DateAudit<Long> {
     @Column(name = "deskripsi")
     private String deskripsi;
 
-    public MataPelajaranModel() {
+    public MataPelajaranEntity() {
     }
 
-    public MataPelajaranModel(String kode, String nama, String kelas, Integer banyakBab, String deskripsi) {
+    public MataPelajaranEntity(String kode, String nama, String kelas, Integer banyakBab, String deskripsi) {
         this.kode = kode;
         this.nama = nama;
         this.kelas = kelas;

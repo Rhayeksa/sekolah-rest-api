@@ -5,14 +5,17 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "guru")
-public class GuruModel extends DateAudit<Long> {
+@Table(name = "siswa")
+public class SiswaEntity extends DateAudit<Long> {
 
-    @Column(name = "nign", nullable = false)
-    private String nign;
+    @Column(name = "nisn", nullable = false)
+    private String nisn;
 
     @Column(name = "nama", nullable = false)
     private String nama;
+
+    @Column(name = "kelas", nullable = false)
+    private String kelas;
 
     @Column(name = "gender", nullable = false)
     private String gender;
@@ -26,24 +29,25 @@ public class GuruModel extends DateAudit<Long> {
     @Column(name = "alamat", nullable = false)
     private String alamat;
 
-    public GuruModel() {
+    public SiswaEntity() {
     }
 
-    public GuruModel(String nign, String nama, String gender, String hp, String email, String alamat) {
-        this.nign = nign;
+    public SiswaEntity(String nisn, String nama, String kelas, String gender, String hp, String email, String alamat) {
+        this.nisn = nisn;
         this.nama = nama;
+        this.kelas = kelas;
         this.gender = gender;
         this.hp = hp;
         this.email = email;
         this.alamat = alamat;
     }
 
-    public String getNign() {
-        return this.nign;
+    public String getNisn() {
+        return this.nisn;
     }
 
-    public void setNign(String nign) {
-        this.nign = nign;
+    public void setNisn(String nisn) {
+        this.nisn = nisn;
     }
 
     public String getNama() {
@@ -52,6 +56,14 @@ public class GuruModel extends DateAudit<Long> {
 
     public void setNama(String nama) {
         this.nama = nama;
+    }
+
+    public String getKelas() {
+        return this.kelas;
+    }
+
+    public void setKelas(String kelas) {
+        this.kelas = kelas;
     }
 
     public String getGender() {

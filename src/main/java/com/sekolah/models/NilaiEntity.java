@@ -8,27 +8,28 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "nilai")
-public class NilaiModel extends DateAudit<Long> {
+public class NilaiEntity extends DateAudit<Long> {
 
     @Column(name = "nilai")
     private Double nilai;
 
     @ManyToOne
     @JoinColumn(name = "id_mata_pelajaran", nullable = false)
-    private MataPelajaranModel mataPelajaranModel;
+    private MataPelajaranEntity mataPelajaranModel;
 
     @ManyToOne
     @JoinColumn(name = "id_guru", nullable = false)
-    private GuruModel guruModel;
+    private GuruEntity guruModel;
 
     @ManyToOne
     @JoinColumn(name = "id_siswa", nullable = false)
-    private SiswaModel siswaModel;
+    private SiswaEntity siswaModel;
 
-    public NilaiModel() {
+    public NilaiEntity() {
     }
 
-    public NilaiModel(Double nilai, MataPelajaranModel mataPelajaranModel, GuruModel guruModel, SiswaModel siswaModel) {
+    public NilaiEntity(Double nilai, MataPelajaranEntity mataPelajaranModel, GuruEntity guruModel,
+            SiswaEntity siswaModel) {
         this.nilai = nilai;
         this.mataPelajaranModel = mataPelajaranModel;
         this.guruModel = guruModel;
@@ -43,27 +44,27 @@ public class NilaiModel extends DateAudit<Long> {
         this.nilai = nilai;
     }
 
-    public MataPelajaranModel getMataPelajaranModel() {
+    public MataPelajaranEntity getMataPelajaranModel() {
         return this.mataPelajaranModel;
     }
 
-    public void setMataPelajaranModel(MataPelajaranModel mataPelajaranModel) {
+    public void setMataPelajaranModel(MataPelajaranEntity mataPelajaranModel) {
         this.mataPelajaranModel = mataPelajaranModel;
     }
 
-    public GuruModel getGuruModel() {
+    public GuruEntity getGuruModel() {
         return this.guruModel;
     }
 
-    public void setGuruModel(GuruModel guruModel) {
+    public void setGuruModel(GuruEntity guruModel) {
         this.guruModel = guruModel;
     }
 
-    public SiswaModel getSiswaModel() {
+    public SiswaEntity getSiswaModel() {
         return this.siswaModel;
     }
 
-    public void setSiswaModel(SiswaModel siswaModel) {
+    public void setSiswaModel(SiswaEntity siswaModel) {
         this.siswaModel = siswaModel;
     }
 
