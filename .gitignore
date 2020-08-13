@@ -35,3 +35,4 @@ out/
 
 ### doc ###
 documentations/*.*.bak
+bin
